@@ -1,0 +1,1563 @@
+{
+  "version": 1,
+  "style": "東方水墨畫結合細緻的工筆勾線：外輪廓清楚俐落，內部有墨色濃淡與宣紙質感，局部用金色點綴；色調沉穩、不過度飽和；光源在左上方。",
+  "forbid_default": "任何文字、字母、數字、印章、簽名、浮水印或邊框；光暈、光束、粒子、煙霧、閃光等特效；現代物品；任何現有遊戲、動畫或品牌的角色與標誌。",
+  "background_words": {
+    "#FFFFFF": "純白色的平塗背景，沒有地面、沒有影子、沒有漸層，方便去背。",
+    "#808080": "中性灰色的平塗背景，沒有地面、沒有影子、沒有漸層，方便去背。"
+  },
+  "character": "同一位看不出明顯性別特徵的年輕修士：黑色長髮在頭頂束成髮髻，五官清秀平和，身形修長，表情沉靜。",
+  "categories": {
+    "icon": {
+      "name": "App 圖示",
+      "ratio": "正方形 1:1",
+      "width": 1024,
+      "height": 1024,
+      "aspects": [
+        [
+          1,
+          1
+        ]
+      ],
+      "transparent": false,
+      "allow_jpeg": false,
+      "file": "PNG（不透明，不能有透明通道）",
+      "usage_phrase": "iPhone app 的圖示（修仙主題的每日打卡 app）",
+      "composition": "正方形畫布；主體置中，約佔畫面 70%，四周留安全邊距（系統會自動裁成圓角）；圖形簡潔，縮小到 60 像素仍然清楚。",
+      "background": "背景填滿深黛青色到墨黑色的柔和漸層，不透明。",
+      "forbid": "任何文字、字母、數字、簽名或浮水印；圓角或外框（系統會自動裁切）；任何現有 app 圖示或品牌標誌。",
+      "effects": "無（靜態圖示）",
+      "subject_size": "約 70%",
+      "check": {
+        "margins": null,
+        "fill": null
+      }
+    },
+    "avatar": {
+      "name": "角色立繪",
+      "ratio": "直式 2:3",
+      "width": 1024,
+      "height": 1536,
+      "aspects": [
+        [
+          2,
+          3
+        ]
+      ],
+      "transparent": true,
+      "allow_jpeg": false,
+      "file": "PNG（透明背景）",
+      "usage_phrase": "手機修仙遊戲的角色全身立繪",
+      "composition": "全身站姿，頭頂到腳底約佔畫面高度 90%（上方留約 5%、下方留約 3%）；身體 3/4 側向畫面右方；雙手與雙腳完整入鏡，不被裁切。",
+      "effects": "境界色光環、待機時上下浮動、元嬰虛影（把立繪縮小、半透明疊在身後）、渡劫雷光、升級爆光",
+      "subject_size": "高度約 90%",
+      "check": {
+        "margins": {
+          "top": 0.02,
+          "bottom": 0.01,
+          "left": 0.02,
+          "right": 0.02
+        },
+        "fill": {
+          "axis": "height",
+          "min": 0.85,
+          "max": 0.96
+        }
+      },
+      "display": {
+        "app": 360
+      }
+    },
+    "master": {
+      "name": "師父插圖",
+      "ratio": "直式 2:3",
+      "width": 1024,
+      "height": 1536,
+      "aspects": [
+        [
+          2,
+          3
+        ]
+      ],
+      "transparent": true,
+      "allow_jpeg": false,
+      "file": "PNG（透明背景）",
+      "usage_phrase": "手機修仙遊戲中師父角色的半身插圖",
+      "composition": "腰部以上的半身像，頭部在畫面上方三分之一，身體 3/4 側向畫面右方，雙手入鏡；畫面下緣切在腰部。",
+      "effects": "對話框、淡入淡出、說話時輕微浮動",
+      "subject_size": "下緣切在腰部",
+      "check": {
+        "margins": {
+          "top": 0.02,
+          "bottom": 0.0,
+          "left": 0.02,
+          "right": 0.02
+        },
+        "fill": null
+      },
+      "display": {
+        "app": 320
+      }
+    },
+    "badge": {
+      "name": "境界徽章",
+      "ratio": "正方形 1:1",
+      "width": 1024,
+      "height": 1024,
+      "aspects": [
+        [
+          1,
+          1
+        ]
+      ],
+      "transparent": true,
+      "allow_jpeg": false,
+      "file": "PNG（透明背景）",
+      "usage_phrase": "手機修仙遊戲的境界徽章",
+      "composition": "正面平視的圓形徽章：正圓、完全置中，直徑約佔畫面 90%。外框統一：金色細雙圈外框，裡面是深色圓盤底；中央是一個簡潔、輪廓粗而清楚的圖案，縮小到 64 像素也能辨識。",
+      "effects": "外圈旋轉光暈、解鎖時爆光、還沒達到的境界顯示灰階",
+      "subject_size": "直徑約 90%",
+      "check": {
+        "margins": {
+          "top": 0.02,
+          "bottom": 0.02,
+          "left": 0.02,
+          "right": 0.02
+        },
+        "fill": {
+          "axis": "width",
+          "min": 0.84,
+          "max": 0.96
+        }
+      },
+      "display": {
+        "app": 120,
+        "widget": 44
+      }
+    },
+    "chest": {
+      "name": "寶箱",
+      "ratio": "正方形 1:1",
+      "width": 1024,
+      "height": 1024,
+      "aspects": [
+        [
+          1,
+          1
+        ]
+      ],
+      "transparent": true,
+      "allow_jpeg": false,
+      "file": "PNG（透明背景）",
+      "usage_phrase": "手機修仙遊戲的寶箱道具圖",
+      "composition": "單一個寶箱（或錦袋），蓋子關閉；3/4 俯視角（約 30 度），正面略朝畫面右前方；主體置中，寬度約佔畫面 75%。",
+      "effects": "搖晃與震動、品質色光柱、粒子、開箱閃光、物品飛出",
+      "subject_size": "寬度約 75%",
+      "check": {
+        "margins": {
+          "top": 0.02,
+          "bottom": 0.02,
+          "left": 0.02,
+          "right": 0.02
+        },
+        "fill": {
+          "axis": "width",
+          "min": 0.6,
+          "max": 0.9
+        }
+      },
+      "display": {
+        "app": 220
+      }
+    },
+    "item": {
+      "name": "道具圖示",
+      "ratio": "正方形 1:1",
+      "width": 1024,
+      "height": 1024,
+      "aspects": [
+        [
+          1,
+          1
+        ]
+      ],
+      "transparent": true,
+      "allow_jpeg": false,
+      "file": "PNG（透明背景）",
+      "usage_phrase": "手機修仙遊戲的道具圖示",
+      "composition": "單一物件；3/4 俯視角（約 30 度）；主體置中，約佔畫面 65%；不要盤子、底座或其他配件。",
+      "effects": "品質色光暈與外框、漂浮、光澤掃過、獲得時彈跳放大",
+      "subject_size": "約 65%",
+      "check": {
+        "margins": {
+          "top": 0.03,
+          "bottom": 0.03,
+          "left": 0.03,
+          "right": 0.03
+        },
+        "fill": {
+          "axis": "max",
+          "min": 0.5,
+          "max": 0.85
+        }
+      },
+      "display": {
+        "app": 96
+      }
+    },
+    "equip": {
+      "name": "法寶",
+      "ratio": "正方形 1:1",
+      "width": 1024,
+      "height": 1024,
+      "aspects": [
+        [
+          1,
+          1
+        ]
+      ],
+      "transparent": true,
+      "allow_jpeg": false,
+      "file": "PNG（透明背景）",
+      "usage_phrase": "手機修仙遊戲的法寶道具圖",
+      "composition": "單一物件；3/4 俯視角；主體置中，約佔畫面 75%；長形物件（例如劍）以 45 度斜放。",
+      "effects": "品質色光暈與外框、漂浮、光澤掃過、獲得時彈跳放大",
+      "subject_size": "約 75%",
+      "check": {
+        "margins": {
+          "top": 0.03,
+          "bottom": 0.03,
+          "left": 0.03,
+          "right": 0.03
+        },
+        "fill": {
+          "axis": "max",
+          "min": 0.6,
+          "max": 0.9
+        }
+      },
+      "display": {
+        "app": 96
+      }
+    },
+    "tech": {
+      "name": "功法秘笈",
+      "ratio": "正方形 1:1",
+      "width": 1024,
+      "height": 1024,
+      "aspects": [
+        [
+          1,
+          1
+        ]
+      ],
+      "transparent": true,
+      "allow_jpeg": false,
+      "file": "PNG（透明背景）",
+      "usage_phrase": "手機修仙遊戲的功法秘笈道具圖",
+      "composition": "一本線裝古書，3/4 俯視斜放，封面朝上、看得清楚封面圖案；主體置中，約佔畫面 70%；封面不要書名或任何文字（書名之後由程式加上）。",
+      "effects": "品質色光暈、書名文字（程式排版）、翻開動畫",
+      "subject_size": "約 70%",
+      "check": {
+        "margins": {
+          "top": 0.03,
+          "bottom": 0.03,
+          "left": 0.03,
+          "right": 0.03
+        },
+        "fill": {
+          "axis": "max",
+          "min": 0.55,
+          "max": 0.88
+        }
+      },
+      "display": {
+        "app": 96
+      }
+    },
+    "root": {
+      "name": "靈根靈珠",
+      "ratio": "正方形 1:1",
+      "width": 1024,
+      "height": 1024,
+      "aspects": [
+        [
+          1,
+          1
+        ]
+      ],
+      "transparent": true,
+      "allow_jpeg": false,
+      "file": "PNG（透明背景）",
+      "usage_phrase": "手機修仙遊戲測靈根畫面用的元素靈珠",
+      "composition": "一顆正圓的珠子，正面平視，置中約佔畫面 70%；珠子內部有元素紋樣，表面有玉石般的光澤，但珠子外面不要發光。",
+      "effects": "外發光、旋轉、測靈根時的抽選動畫",
+      "subject_size": "約 70%",
+      "check": {
+        "margins": {
+          "top": 0.05,
+          "bottom": 0.05,
+          "left": 0.05,
+          "right": 0.05
+        },
+        "fill": {
+          "axis": "width",
+          "min": 0.6,
+          "max": 0.82
+        }
+      },
+      "display": {
+        "app": 120
+      }
+    },
+    "object": {
+      "name": "介面道具",
+      "ratio": "正方形 1:1",
+      "width": 1024,
+      "height": 1024,
+      "aspects": [
+        [
+          1,
+          1
+        ]
+      ],
+      "transparent": true,
+      "allow_jpeg": false,
+      "file": "PNG（透明背景）",
+      "usage_phrase": "手機修仙遊戲介面用的道具插圖",
+      "composition": "單一物件；3/4 俯視角（約 30 度）；主體置中，約佔畫面 65%。",
+      "effects": "紙人燃燒、線香的煙與香頭火光、命燈火焰（依壽元變化）、淡入",
+      "subject_size": "約 65%",
+      "check": {
+        "margins": {
+          "top": 0.03,
+          "bottom": 0.03,
+          "left": 0.03,
+          "right": 0.03
+        },
+        "fill": {
+          "axis": "max",
+          "min": 0.5,
+          "max": 0.85
+        }
+      },
+      "display": {
+        "app": 160
+      }
+    },
+    "scroll": {
+      "name": "空白卷軸",
+      "ratio": "直式 2:3",
+      "width": 1024,
+      "height": 1536,
+      "aspects": [
+        [
+          2,
+          3
+        ]
+      ],
+      "transparent": true,
+      "allow_jpeg": false,
+      "file": "PNG（透明背景）",
+      "usage_phrase": "手機修仙遊戲的空白卷軸素材（之後由程式在上面排文字）",
+      "composition": "正面平視、直式完全展開的卷軸；上下各一根木軸；紙面約佔畫面 80%，必須完全空白，不要任何圖案或文字。",
+      "effects": "由上往下展開的動畫、文字排版",
+      "subject_size": "高度約 90%（含木軸）",
+      "check": {
+        "margins": {
+          "top": 0.01,
+          "bottom": 0.01,
+          "left": 0.02,
+          "right": 0.02
+        },
+        "fill": {
+          "axis": "height",
+          "min": 0.8,
+          "max": 0.98
+        }
+      },
+      "display": {
+        "app": 852
+      }
+    },
+    "background": {
+      "name": "背景",
+      "ratio": "直式 2:3 或更長的直式（例如 9:16）",
+      "width": 1024,
+      "height": 1536,
+      "aspects": [
+        [
+          2,
+          3
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          9,
+          19.5
+        ]
+      ],
+      "transparent": false,
+      "allow_jpeg": true,
+      "file": "PNG 或 JPG（不透明）",
+      "usage_phrase": "手機修仙遊戲的直式全螢幕背景",
+      "composition": "直式構圖；主要景物放在畫面上方 30% 與下方 20%；中央 50% 的區域要偏暗、細節少（之後會放介面卡片）；左右邊緣各 15% 可能被裁掉，不要放重要景物。",
+      "background": "整張是完整的場景，不透明。",
+      "forbid": "任何文字、字母、數字、印章、簽名、浮水印或邊框；人物；閃電或光束（之後由程式加上）；現代物品。",
+      "effects": "雲霧緩慢飄動、月光微微明暗、渡劫的閃電與雲層翻湧",
+      "subject_size": "整張場景",
+      "check": {
+        "margins": null,
+        "fill": null
+      },
+      "display": {
+        "app": 852
+      }
+    },
+    "card": {
+      "name": "卡片背面",
+      "ratio": "直式 2:3",
+      "width": 1024,
+      "height": 1536,
+      "aspects": [
+        [
+          2,
+          3
+        ]
+      ],
+      "transparent": false,
+      "allow_jpeg": false,
+      "file": "PNG（不透明）",
+      "usage_phrase": "手機修仙遊戲的卡片背面圖",
+      "composition": "直式卡片背面的圖案；上下左右對稱；圖案一路延伸到畫面邊緣（之後由程式裁成圓角）；中央有一個圓形主圖案。",
+      "background": "深黛青色的底，畫面填滿、不透明。",
+      "effects": "翻牌動畫、邊緣光澤",
+      "subject_size": "填滿畫面",
+      "check": {
+        "margins": null,
+        "fill": null
+      },
+      "display": {
+        "app": 300
+      }
+    }
+  },
+  "anchors": {
+    "avatar": "avatar_realm_1",
+    "badge": "badge_realm_1",
+    "item": "item_bt_zhuji",
+    "background": "bg_main"
+  },
+  "category_anchor": {
+    "icon": null,
+    "avatar": "avatar",
+    "master": "avatar",
+    "badge": "badge",
+    "card": "badge",
+    "chest": "item",
+    "item": "item",
+    "equip": "item",
+    "tech": "item",
+    "root": "item",
+    "object": "item",
+    "scroll": "item",
+    "background": "background"
+  },
+  "assets": [
+    {
+      "id": "app_icon",
+      "category": "icon",
+      "name": "App 圖示",
+      "priority": "P1",
+      "usage": "iPhone 主畫面上的 app 圖示",
+      "subject": "畫面中央懸浮一顆圓潤的金色丹藥，丹藥外圍環繞一圈淡金色的雲紋，下方隱約有墨色遠山的剪影；圖形簡潔有力。",
+      "must": [
+        "中央是一顆金色圓丹",
+        "外圍一圈金色雲紋",
+        "深色背景填滿整個畫布，沒有透明",
+        "沒有任何文字"
+      ],
+      "gen_bg": null
+    },
+    {
+      "id": "avatar_realm_1",
+      "category": "avatar",
+      "name": "煉氣期立繪",
+      "priority": "P1",
+      "usage": "道體頁的角色立繪（煉氣期）",
+      "subject": "穿灰白色粗布短袍，腰間繫一條麻繩，腳穿布鞋；左手拿著一卷捲起來的書卷；站姿端正，略顯青澀。",
+      "must": [
+        "灰白色粗布短袍與麻繩腰帶",
+        "左手拿著捲起來的書卷",
+        "服裝樸素、沒有華麗配件",
+        "全身入鏡（包含雙腳）"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "avatar_realm_2",
+      "category": "avatar",
+      "name": "築基期立繪",
+      "priority": "P1",
+      "usage": "道體頁的角色立繪（築基期）",
+      "subject": "穿淡青色道袍、繫白色腰帶，頭髮用一根玉簪固定；雙腳站在一塊低矮的四方形石台上；神情比附圖更沉穩。",
+      "must": [
+        "淡青色道袍與白色腰帶",
+        "玉簪束髮",
+        "腳下一塊四方形石台",
+        "和煉氣期立繪是同一個角色"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "avatar_realm_3",
+      "category": "avatar",
+      "name": "金丹期立繪",
+      "priority": "P1",
+      "usage": "道體頁的角色立繪（金丹期）",
+      "subject": "穿白色道袍，衣緣有金色滾邊，繫金色腰帶；腰間掛一個小葫蘆；胸前垂著一顆金色圓珠墜飾；雙手交疊在腹前。",
+      "must": [
+        "白色道袍與金色滾邊",
+        "腰間小葫蘆",
+        "胸前金色圓珠墜飾",
+        "和煉氣期立繪是同一個角色"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "avatar_realm_4",
+      "category": "avatar",
+      "name": "元嬰期立繪",
+      "priority": "P2",
+      "usage": "道體頁的角色立繪（元嬰期）",
+      "subject": "穿深藍色寬袖道袍，衣襬有白色雲紋刺繡；背上斜背一把收在劍鞘裡的長劍；左手食指與中指併攏，捏著劍訣。",
+      "must": [
+        "深藍色寬袖道袍與白色雲紋刺繡",
+        "背上斜背長劍",
+        "左手兩指併攏",
+        "和煉氣期立繪是同一個角色"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "avatar_realm_5",
+      "category": "avatar",
+      "name": "化神期立繪",
+      "priority": "P2",
+      "usage": "道體頁的角色立繪（化神期）",
+      "subject": "穿銀白色多層次道袍，外披一層淺灰色輕紗；額頭中央有一點金色印記；右手拿著一根白鶴羽毛。",
+      "must": [
+        "銀白色多層次道袍與輕紗",
+        "額頭中央的金色印記",
+        "右手拿著白鶴羽毛",
+        "和煉氣期立繪是同一個角色"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "avatar_realm_6",
+      "category": "avatar",
+      "name": "煉虛期立繪",
+      "priority": "P2",
+      "usage": "道體頁的角色立繪（煉虛期）",
+      "subject": "穿墨黑色長袍，袍面繡著銀色星點與星宿連線的紋樣；長髮只在頭頂束一個小髻，其餘披在背後；雙手背在身後。",
+      "must": [
+        "墨黑長袍繡著銀色星點",
+        "長髮半披",
+        "雙手背在身後",
+        "和煉氣期立繪是同一個角色"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "avatar_realm_7",
+      "category": "avatar",
+      "name": "合體期立繪",
+      "priority": "P2",
+      "usage": "道體頁的角色立繪（合體期）",
+      "subject": "穿左黑右白、兩色相間的道袍；腰間佩著一把長劍，劍柄繫著朱紅色劍穗；站姿挺拔，目光堅定。",
+      "must": [
+        "左黑右白的道袍",
+        "腰間佩劍與朱紅色劍穗",
+        "和煉氣期立繪是同一個角色"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "avatar_realm_8",
+      "category": "avatar",
+      "name": "大乘期立繪",
+      "priority": "P2",
+      "usage": "道體頁的角色立繪（大乘期）",
+      "subject": "穿金色與白色相間的華麗長袍，頭戴白玉蓮花冠；右手持一柄白色拂塵；神情慈和。",
+      "must": [
+        "金白相間的華麗長袍",
+        "白玉蓮花冠",
+        "右手持白色拂塵",
+        "和煉氣期立繪是同一個角色"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "avatar_realm_9",
+      "category": "avatar",
+      "name": "渡劫期立繪",
+      "priority": "P2",
+      "usage": "道體頁的角色立繪（渡劫期）",
+      "subject": "穿紫黑色道袍，袍上有金色雷紋刺繡，衣角有幾處焦黑的破損；長髮微微飛揚；眼神堅毅，像正要迎接天劫（不要畫出閃電）。",
+      "must": [
+        "紫黑色道袍與金色雷紋刺繡",
+        "衣角焦黑破損",
+        "沒有閃電或光效",
+        "和煉氣期立繪是同一個角色"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "avatar_realm_10",
+      "category": "avatar",
+      "name": "飛升期立繪",
+      "priority": "P2",
+      "usage": "道體頁的角色立繪（飛升期）",
+      "subject": "穿白金色長袍、赤腳，雙腳踩在一朵輪廓清楚的白色祥雲上；雙手自然張開，仰望上方；神情超然。",
+      "must": [
+        "白金色長袍、赤腳",
+        "腳下一朵輪廓清楚的祥雲",
+        "仰望上方",
+        "和煉氣期立繪是同一個角色"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "ill_master",
+      "category": "master",
+      "name": "師父",
+      "priority": "P1",
+      "usage": "入門流程與「師父傳音」訊息卡上的師父插圖",
+      "subject": "一位慈祥但嚴肅的老年師父：白色長鬚，白髮束成高髻並插一根木簪；穿灰白色寬袖道袍；右手持一柄白色拂塵搭在臂彎；眼神溫和有神。",
+      "must": [
+        "白色長鬚與白髮高髻",
+        "灰白色寬袖道袍",
+        "右手持拂塵",
+        "腰部以上的半身構圖"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "badge_realm_1",
+      "category": "badge",
+      "name": "煉氣徽章",
+      "priority": "P1",
+      "usage": "境界徽章（煉氣），也用在動態島",
+      "subject": "中央圖案是一縷由下往上盤旋的白色氣流螺旋。",
+      "must": [
+        "中央是白色螺旋氣流",
+        "金色細雙圈外框與深色圓盤底"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "badge_realm_2",
+      "category": "badge",
+      "name": "築基徽章",
+      "priority": "P1",
+      "usage": "境界徽章（築基）",
+      "subject": "中央圖案是三層方形石台，由下往上一層比一層小。",
+      "must": [
+        "三層方形石台",
+        "外框和煉氣徽章一致"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "badge_realm_3",
+      "category": "badge",
+      "name": "金丹徽章",
+      "priority": "P1",
+      "usage": "境界徽章（金丹）",
+      "subject": "中央圖案是一顆金色圓丹，下方承托著一座三足小丹爐。",
+      "must": [
+        "金色圓丹",
+        "三足小丹爐",
+        "外框和煉氣徽章一致"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "badge_realm_4",
+      "category": "badge",
+      "name": "元嬰徽章",
+      "priority": "P1",
+      "usage": "境界徽章（元嬰）",
+      "subject": "中央圖案是一個盤腿而坐的小嬰孩剪影，坐在一朵蓮花上。",
+      "must": [
+        "盤坐的小嬰孩剪影",
+        "蓮花",
+        "外框和煉氣徽章一致"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "badge_realm_5",
+      "category": "badge",
+      "name": "化神徽章",
+      "priority": "P1",
+      "usage": "境界徽章（化神）",
+      "subject": "中央圖案是一隻展翅飛翔的白鶴。",
+      "must": [
+        "展翅的白鶴",
+        "外框和煉氣徽章一致"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "badge_realm_6",
+      "category": "badge",
+      "name": "煉虛徽章",
+      "priority": "P1",
+      "usage": "境界徽章（煉虛）",
+      "subject": "中央圖案是一彎新月，周圍有幾顆星點。",
+      "must": [
+        "新月",
+        "星點",
+        "外框和煉氣徽章一致"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "badge_realm_7",
+      "category": "badge",
+      "name": "合體徽章",
+      "priority": "P1",
+      "usage": "境界徽章（合體）",
+      "subject": "中央圖案是黑白兩色的陰陽太極圖。",
+      "must": [
+        "陰陽太極圖",
+        "外框和煉氣徽章一致"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "badge_realm_8",
+      "category": "badge",
+      "name": "大乘徽章",
+      "priority": "P1",
+      "usage": "境界徽章（大乘）",
+      "subject": "中央圖案是一朵正面的八瓣金色蓮花。",
+      "must": [
+        "正面的八瓣金色蓮花",
+        "外框和煉氣徽章一致"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "badge_realm_9",
+      "category": "badge",
+      "name": "渡劫徽章",
+      "priority": "P1",
+      "usage": "境界徽章（渡劫）",
+      "subject": "中央圖案是一道金色閃電劈開雲層（這是徽章上平面的圖案，不是發光特效）。",
+      "must": [
+        "閃電劈開雲層的平面圖案",
+        "外框和煉氣徽章一致"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "badge_realm_10",
+      "category": "badge",
+      "name": "飛升徽章",
+      "priority": "P1",
+      "usage": "境界徽章（飛升）",
+      "subject": "中央圖案是雲層中一座半開的天門牌坊，門內是淡白色的平塗；牌坊上沒有任何字。",
+      "must": [
+        "雲中的天門牌坊",
+        "牌坊上沒有字",
+        "外框和煉氣徽章一致"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "chest_first",
+      "category": "chest",
+      "name": "首功寶箱",
+      "priority": "P1",
+      "usage": "每天第一次打勾時跳出的寶箱",
+      "subject": "一個小巧的朱紅色漆木盒，四個角包著金色銅角，正面有一個如意形狀的金色鎖扣，盒蓋略呈弧形。",
+      "must": [
+        "朱紅色漆木盒",
+        "金色包角",
+        "如意形狀的鎖扣",
+        "蓋子關閉"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "chest_daily",
+      "category": "chest",
+      "name": "乾坤袋",
+      "priority": "P1",
+      "usage": "打卡成功時獲得的福袋",
+      "subject": "一個飽滿的束口錦袋：深青色織錦布料上繡著金色雲紋，袋口用金色繩子綁成結。",
+      "must": [
+        "深青色束口錦袋",
+        "金色雲紋刺繡",
+        "金色繩結"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "chest_perfect",
+      "category": "chest",
+      "name": "圓滿寶匣",
+      "priority": "P1",
+      "usage": "全部完成（圓滿）時獲得的寶匣",
+      "subject": "一個黑檀木寶匣，邊緣鑲著金色細邊，盒蓋中央嵌一塊圓形白玉，玉上有淡淡的雲紋。",
+      "must": [
+        "黑檀木寶匣",
+        "金色鑲邊",
+        "盒蓋中央的圓形白玉",
+        "蓋子關閉"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "chest_tier_xuan",
+      "category": "chest",
+      "name": "玄品寶匣",
+      "priority": "P1",
+      "usage": "里程碑與小周天的獎勵寶匣（玄品）",
+      "subject": "一個以鮮明藍色為主色的青銅寶匣，表面刻著雲雷紋，四角有小銅釘。",
+      "must": [
+        "主色是藍色（接近 #3F8EFC）",
+        "青銅質感",
+        "雲雷紋",
+        "蓋子關閉"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "chest_tier_di",
+      "category": "chest",
+      "name": "地品寶匣",
+      "priority": "P1",
+      "usage": "里程碑與大周天的獎勵寶匣（地品）",
+      "subject": "一個以紫色為主色的玉石寶匣，四個角各有一個小獸首浮雕，盒蓋有金色邊框。",
+      "must": [
+        "主色是紫色（接近 #A259FF）",
+        "玉石質感",
+        "四角獸首浮雕",
+        "蓋子關閉"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "chest_tier_tian",
+      "category": "chest",
+      "name": "天品寶匣",
+      "priority": "P2",
+      "usage": "長期閉關里程碑的獎勵寶匣（天品）",
+      "subject": "一個以金色為主色的華麗寶匣，盒蓋上有一條盤龍浮雕，邊緣鑲著小顆寶石。",
+      "must": [
+        "主色是金色（接近 #F5B700）",
+        "盒蓋上的盤龍浮雕",
+        "蓋子關閉"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "chest_tier_xian",
+      "category": "chest",
+      "name": "仙品寶匣",
+      "priority": "P2",
+      "usage": "閉關 365 日的獎勵寶匣（仙品）",
+      "subject": "一個紅色與金色相間、造型最華麗的寶匣，盒蓋上有一隻展翅鳳凰的浮雕，四角有祥雲裝飾。",
+      "must": [
+        "紅金配色（紅色接近 #FF4D4F）",
+        "鳳凰浮雕",
+        "比其他寶匣更華麗",
+        "蓋子關閉"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "item_spirit_stone",
+      "category": "item",
+      "name": "靈石",
+      "priority": "P1",
+      "usage": "貨幣圖示（靈石）",
+      "subject": "一塊淡青色、半透明的水晶礦石，有清楚的切面與稜角，內部有細微的紋理。",
+      "must": [
+        "淡青色半透明水晶",
+        "清楚的切面與稜角"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "item_pill_qi",
+      "category": "item",
+      "name": "聚氣丹",
+      "priority": "P1",
+      "usage": "道具圖示（凡品丹藥）",
+      "subject": "一顆灰白色的小圓丹藥，表面有細細的螺旋紋，質感溫潤。",
+      "must": [
+        "灰白色圓丹",
+        "表面的螺旋紋",
+        "只有一顆"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "item_pill_peiyuan",
+      "category": "item",
+      "name": "培元丹",
+      "priority": "P1",
+      "usage": "道具圖示（靈品丹藥）",
+      "subject": "一顆淡綠色的圓丹藥，表面有像葉脈一樣的細紋。",
+      "must": [
+        "淡綠色圓丹",
+        "葉脈般的細紋"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "item_talisman_standin",
+      "category": "item",
+      "name": "替身符",
+      "priority": "P1",
+      "usage": "道具圖示（替身符）",
+      "subject": "一張直立的長條黃色符紙，紙上用朱砂紅畫著抽象的螺旋與雲紋圖形，符紙上方綁著一小段紅繩；圖形不可以是文字，也不可以像文字的筆畫。",
+      "must": [
+        "黃色長條符紙",
+        "朱砂紅的抽象圖形",
+        "沒有任何文字或像文字的筆畫",
+        "上方的紅繩"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "item_pill_yanshou",
+      "category": "item",
+      "name": "延壽丹",
+      "priority": "P1",
+      "usage": "道具圖示（續命獎勵）",
+      "subject": "一顆粉桃色的丹藥，形狀像一顆小壽桃，頂端微尖，旁邊帶一片小綠葉。",
+      "must": [
+        "粉桃色",
+        "壽桃形狀",
+        "一片小綠葉"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "item_scroll_fragment",
+      "category": "item",
+      "name": "功法殘卷",
+      "priority": "P1",
+      "usage": "道具圖示（功法殘卷）",
+      "subject": "一卷半捲的古老卷軸，紙面泛黃，邊緣有燒焦與缺角，用一條褪色的紅繩綁著；看不到卷內的任何文字。",
+      "must": [
+        "泛黃的半捲卷軸",
+        "邊緣燒焦缺角",
+        "褪色紅繩",
+        "看不到任何文字"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "item_bt_zhuji",
+      "category": "item",
+      "name": "築基丹",
+      "priority": "P1",
+      "usage": "道具圖示（突破至築基的丹藥）",
+      "subject": "一顆紫色的圓丹藥，表面有三道金色的環形紋路，像一層層的台基。",
+      "must": [
+        "紫色圓丹（接近 #A259FF）",
+        "三道金色環紋"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "item_bt_ningjin",
+      "category": "item",
+      "name": "凝金丹",
+      "priority": "P1",
+      "usage": "道具圖示（突破至金丹的丹藥）",
+      "subject": "一顆表面光滑如鏡的金色圓丹，中間有一道細細的紫色環紋。",
+      "must": [
+        "光滑的金色圓丹",
+        "一道紫色細環紋"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "item_pill_ningshen",
+      "category": "item",
+      "name": "凝神丹",
+      "priority": "P2",
+      "usage": "道具圖示（靈品丹藥）",
+      "subject": "一顆綠色的圓丹藥，表面散布著像星點一樣的白色小點。",
+      "must": [
+        "綠色圓丹",
+        "白色星點"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "item_pill_xisui",
+      "category": "item",
+      "name": "洗髓丹",
+      "priority": "P2",
+      "usage": "道具圖示（玄品丹藥）",
+      "subject": "一顆藍色、半透明的圓丹藥，內部有像水波一樣的紋路。",
+      "must": [
+        "藍色半透明圓丹",
+        "內部水波紋"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "item_pill_wudao",
+      "category": "item",
+      "name": "悟道丹",
+      "priority": "P2",
+      "usage": "道具圖示（玄品丹藥）",
+      "subject": "一顆藍色的圓丹藥，表面有白色的雲紋。",
+      "must": [
+        "藍色圓丹",
+        "白色雲紋"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "item_pill_fuyuan",
+      "category": "item",
+      "name": "福緣丹",
+      "priority": "P2",
+      "usage": "道具圖示（玄品丹藥）",
+      "subject": "一顆藍色的圓丹藥，表面有金色的古錢幣紋樣（圓形中間有方孔，沒有任何文字）。",
+      "must": [
+        "藍色圓丹",
+        "金色的圓形方孔錢紋",
+        "沒有文字"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "item_pill_dahuan",
+      "category": "item",
+      "name": "大還丹",
+      "priority": "P2",
+      "usage": "道具圖示（地品丹藥）",
+      "subject": "一顆比一般丹藥更大的紫色圓丹，表面有細密的龍鱗紋路。",
+      "must": [
+        "紫色大顆圓丹",
+        "龍鱗紋路"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "item_pill_xiling",
+      "category": "item",
+      "name": "洗靈丹",
+      "priority": "P2",
+      "usage": "道具圖示（天品丹藥）",
+      "subject": "一顆金色的圓丹藥，表面有金、綠、藍、紅、黃五種顏色交錯流動的紋路。",
+      "must": [
+        "金色圓丹",
+        "五種顏色交錯的紋路"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "item_stone_pouch",
+      "category": "item",
+      "name": "靈石袋",
+      "priority": "P2",
+      "usage": "道具圖示（靈石袋）",
+      "subject": "一個打開袋口的小布袋，袋口露出幾顆淡青色的水晶靈石。",
+      "must": [
+        "小布袋",
+        "袋口露出淡青色靈石"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "item_bt_yuanying",
+      "category": "item",
+      "name": "元嬰果",
+      "priority": "P2",
+      "usage": "道具圖示（突破至元嬰）",
+      "subject": "一顆圓潤的白玉色仙果，表面有淡淡的、蜷縮嬰孩輪廓的浮雕，頂端帶兩片綠葉。",
+      "must": [
+        "白玉色仙果",
+        "淡淡的嬰孩輪廓浮雕",
+        "兩片綠葉"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "item_bt_huashen",
+      "category": "item",
+      "name": "化神丹",
+      "priority": "P2",
+      "usage": "道具圖示（突破至化神）",
+      "subject": "一顆銀白色的圓丹藥，表面有像白鶴羽毛的紋路。",
+      "must": [
+        "銀白色圓丹",
+        "羽毛般的紋路"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "item_bt_xukong",
+      "category": "item",
+      "name": "虛空石",
+      "priority": "P2",
+      "usage": "道具圖示（突破至煉虛）",
+      "subject": "一顆深藍近黑的橢圓形寶石，內部像夜空一樣散布著細小的星點。",
+      "must": [
+        "深藍近黑的寶石",
+        "內部的星點"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "item_bt_hedao",
+      "category": "item",
+      "name": "合道果",
+      "priority": "P2",
+      "usage": "道具圖示（突破至合體）",
+      "subject": "一顆一半黑色、一半白色的圓形果實，黑白分界線是像陰陽太極的 S 形，帶一段短枝與一片葉子。",
+      "must": [
+        "黑白各半的果實",
+        "S 形分界線",
+        "短枝與葉子"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "item_bt_dacheng",
+      "category": "item",
+      "name": "大乘舍利",
+      "priority": "P2",
+      "usage": "道具圖示（突破至大乘）",
+      "subject": "一顆晶瑩剔透的淡金色圓珠，像琥珀一樣半透明，內部有柔和的層次。",
+      "must": [
+        "淡金色半透明圓珠"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "item_bt_jiuzhuan",
+      "category": "item",
+      "name": "九轉金丹",
+      "priority": "P2",
+      "usage": "道具圖示（突破至渡劫）",
+      "subject": "一顆金色的圓丹，表面有九道從頂端旋轉而下的螺旋紋。",
+      "must": [
+        "金色圓丹",
+        "九道螺旋紋"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "item_bt_feisheng",
+      "category": "item",
+      "name": "飛升令",
+      "priority": "P2",
+      "usage": "道具圖示（突破至飛升）",
+      "subject": "一塊直立的長方形白玉令牌，邊緣有金色雲紋浮雕，上方穿著紅色流蘇；令牌正面沒有任何文字。",
+      "must": [
+        "白玉令牌",
+        "金色雲紋邊",
+        "紅色流蘇",
+        "沒有文字"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "equip_sword_1",
+      "category": "equip",
+      "name": "飛劍（一）",
+      "priority": "P2",
+      "usage": "法寶圖示（飛劍）",
+      "subject": "一把細長的直劍，銀白色劍身，劍柄纏著墨色細繩，劍格是簡潔的雲紋造型。",
+      "must": [
+        "細長直劍",
+        "銀白色劍身",
+        "墨色纏繩的劍柄"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "equip_sword_2",
+      "category": "equip",
+      "name": "飛劍（二）",
+      "priority": "P2",
+      "usage": "法寶圖示（飛劍）",
+      "subject": "一把寬刃古劍，青銅色劍身上有雲紋，劍柄末端有一個圓形環首。",
+      "must": [
+        "寬刃古劍",
+        "青銅色劍身與雲紋",
+        "圓形環首"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "equip_sword_3",
+      "category": "equip",
+      "name": "飛劍（三）",
+      "priority": "P2",
+      "usage": "法寶圖示（飛劍）",
+      "subject": "一把略帶弧度的細劍，劍身是冷冷的淡藍色，劍柄掛著紅色劍穗。",
+      "must": [
+        "略帶弧度的細劍",
+        "淡藍色劍身",
+        "紅色劍穗"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "equip_robe_1",
+      "category": "equip",
+      "name": "法衣（一）",
+      "priority": "P2",
+      "usage": "法寶圖示（法衣）",
+      "subject": "一件折疊整齊的青色道袍，上面放著一條白色腰帶。",
+      "must": [
+        "折疊整齊的青色道袍",
+        "白色腰帶"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "equip_robe_2",
+      "category": "equip",
+      "name": "法衣（二）",
+      "priority": "P2",
+      "usage": "法寶圖示（法衣）",
+      "subject": "一件掛在木衣架上的暗金色鱗片寶甲，肩部有雲紋護肩。",
+      "must": [
+        "木衣架",
+        "暗金色鱗片寶甲",
+        "雲紋護肩"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "equip_robe_3",
+      "category": "equip",
+      "name": "法衣（三）",
+      "priority": "P2",
+      "usage": "法寶圖示（法衣）",
+      "subject": "一件輕薄、自然垂墜的白色紗質披風，上面繡著淡淡的銀色雲紋。",
+      "must": [
+        "白色紗質披風",
+        "銀色雲紋"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "equip_charm_1",
+      "category": "equip",
+      "name": "靈飾・玉佩",
+      "priority": "P2",
+      "usage": "法寶圖示（靈飾）",
+      "subject": "一塊圓形白玉佩，雕著雲紋，下方垂著紅色繩結與流蘇。",
+      "must": [
+        "圓形白玉佩",
+        "雲紋雕刻",
+        "紅色繩結與流蘇"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "equip_charm_2",
+      "category": "equip",
+      "name": "靈飾・靈戒",
+      "priority": "P2",
+      "usage": "法寶圖示（靈飾）",
+      "subject": "一枚銀色戒指，戒面鑲著一顆綠色寶石。",
+      "must": [
+        "銀色戒指",
+        "綠色寶石戒面"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "equip_charm_3",
+      "category": "equip",
+      "name": "靈飾・護符",
+      "priority": "P2",
+      "usage": "法寶圖示（靈飾）",
+      "subject": "一枚金色鏤空的圓形護符，中央是八卦紋樣，上方有一個掛環。",
+      "must": [
+        "金色鏤空圓形護符",
+        "中央八卦紋樣",
+        "上方掛環"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "tech_study",
+      "category": "tech",
+      "name": "《太虛觀想經》",
+      "priority": "P2",
+      "usage": "功法秘笈（學習類）",
+      "subject": "一本深藍色封面的線裝古書，封面中央是星辰與星軌的圖案，封面沒有任何文字。",
+      "must": [
+        "線裝古書",
+        "深藍色封面",
+        "星辰與星軌圖案",
+        "封面沒有文字"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "tech_body",
+      "category": "tech",
+      "name": "《金剛煉體訣》",
+      "priority": "P2",
+      "usage": "功法秘笈（運動類）",
+      "subject": "一本青銅色封面的線裝古書，封面中央是一個拳頭的圖案，周圍有火焰紋，封面沒有任何文字。",
+      "must": [
+        "線裝古書",
+        "青銅色封面",
+        "拳頭與火焰紋圖案",
+        "封面沒有文字"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "tech_habit",
+      "category": "tech",
+      "name": "《清心明道咒》",
+      "priority": "P2",
+      "usage": "功法秘笈（習慣類）",
+      "subject": "一本白色封面的線裝古書，封面中央是一盞油燈的圖案，周圍有淡淡的雲紋，封面沒有任何文字。",
+      "must": [
+        "線裝古書",
+        "白色封面",
+        "油燈圖案",
+        "封面沒有文字"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "root_metal",
+      "category": "root",
+      "name": "金靈根",
+      "priority": "P2",
+      "usage": "測靈根畫面（金）",
+      "subject": "一顆有金色金屬光澤的圓珠，珠子內部有交錯的劍刃紋樣。",
+      "must": [
+        "金色金屬光澤的圓珠",
+        "內部劍刃紋樣",
+        "珠子外面沒有發光"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "root_wood",
+      "category": "root",
+      "name": "木靈根",
+      "priority": "P2",
+      "usage": "測靈根畫面（木）",
+      "subject": "一顆翠綠色的圓珠，珠子內部有盤繞的藤蔓與葉子紋樣。",
+      "must": [
+        "翠綠色圓珠",
+        "內部藤蔓與葉子紋樣",
+        "珠子外面沒有發光"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "root_water",
+      "category": "root",
+      "name": "水靈根",
+      "priority": "P2",
+      "usage": "測靈根畫面（水）",
+      "subject": "一顆深藍色的圓珠，珠子內部有流動的水波紋樣。",
+      "must": [
+        "深藍色圓珠",
+        "內部水波紋樣",
+        "珠子外面沒有發光"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "root_fire",
+      "category": "root",
+      "name": "火靈根",
+      "priority": "P2",
+      "usage": "測靈根畫面（火）",
+      "subject": "一顆朱紅色的圓珠，珠子內部有火焰紋樣（火焰在珠子裡面，珠子外面不要發光）。",
+      "must": [
+        "朱紅色圓珠",
+        "內部火焰紋樣",
+        "珠子外面沒有發光"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "root_earth",
+      "category": "root",
+      "name": "土靈根",
+      "priority": "P2",
+      "usage": "測靈根畫面（土）",
+      "subject": "一顆土黃色的圓珠，珠子內部有層層疊疊的山岩紋樣。",
+      "must": [
+        "土黃色圓珠",
+        "內部山岩紋樣",
+        "珠子外面沒有發光"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "obj_paper_doll",
+      "category": "object",
+      "name": "紙人",
+      "priority": "P1",
+      "usage": "使用替身符時的紙人動畫素材",
+      "subject": "一個白色的剪紙小人，雙臂張開、雙腳分開站立，邊緣有剪紙的細鋸齒，胸口有一點朱砂紅。",
+      "must": [
+        "白色剪紙小人",
+        "雙臂張開",
+        "胸口的朱砂紅點"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "obj_cushion",
+      "category": "object",
+      "name": "蒲團",
+      "priority": "P1",
+      "usage": "閉關暫停（養病）的圖示",
+      "subject": "一個圓形的草編坐墊，米黃色，表面有一圈圈的編織紋路。",
+      "must": [
+        "圓形草編坐墊",
+        "米黃色",
+        "環狀編織紋路"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "obj_bundle",
+      "category": "object",
+      "name": "行囊",
+      "priority": "P1",
+      "usage": "閉關暫停（出遊）的圖示",
+      "subject": "一根竹杖斜放，杖頭挑著一個用藍色布巾綁起來的包袱。",
+      "must": [
+        "竹杖",
+        "藍色布巾包袱"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "obj_incense",
+      "category": "object",
+      "name": "線香與香爐",
+      "priority": "P1",
+      "usage": "學習計時器的線香（煙由程式畫）",
+      "subject": "一個小巧的三足銅香爐，插著三支細長的線香；香頭沒有點燃，沒有煙也沒有火光。",
+      "must": [
+        "三足銅香爐",
+        "三支線香",
+        "沒有煙也沒有火光"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "obj_life_lamp",
+      "category": "object",
+      "name": "命燈",
+      "priority": "P1",
+      "usage": "壽元（簽章剩餘時間）的命燈（火焰由程式畫）",
+      "subject": "一盞青銅油燈，燈座是蓮花造型；燈芯沒有點燃，沒有火焰。",
+      "must": [
+        "青銅油燈",
+        "蓮花造型燈座",
+        "沒有火焰"
+      ],
+      "gen_bg": "#FFFFFF"
+    },
+    {
+      "id": "tex_scroll",
+      "category": "scroll",
+      "name": "空白卷軸",
+      "priority": "P1",
+      "usage": "修煉週報與機緣卡的底圖（文字由程式排版）",
+      "subject": "一幅宣紙色的直式卷軸完全展開，上下各有一根深色木軸，木軸兩端是金色軸頭；紙面乾淨、完全空白。",
+      "must": [
+        "直式完全展開",
+        "上下木軸與金色軸頭",
+        "紙面完全空白"
+      ],
+      "gen_bg": "#808080"
+    },
+    {
+      "id": "bg_main",
+      "category": "background",
+      "name": "主背景",
+      "priority": "P1",
+      "usage": "今日頁、道體頁等主要畫面的背景",
+      "subject": "夜晚的水墨山水：遠處層疊的山峰與雲海，右上角一輪淡淡的明月；整體是深黛青色到墨黑色的色調；山與雲集中在畫面上方與下方，中間是大片柔和、偏暗的雲霧空間。",
+      "must": [
+        "深色的夜景山水",
+        "右上角的月亮",
+        "中央大面積偏暗、細節少",
+        "沒有人物"
+      ],
+      "gen_bg": null
+    },
+    {
+      "id": "bg_onboarding",
+      "category": "background",
+      "name": "入門背景",
+      "priority": "P1",
+      "usage": "入門流程（拜入宗門）的背景",
+      "subject": "清晨雲霧中的宗門：長長的石階通往山頂的牌坊與殿宇，天邊有淡金色的晨光，遠山層疊；牌坊上沒有任何字。",
+      "must": [
+        "石階通往牌坊與殿宇",
+        "淡金色晨光",
+        "牌坊上沒有字",
+        "沒有人物"
+      ],
+      "gen_bg": null
+    },
+    {
+      "id": "bg_tribulation",
+      "category": "background",
+      "name": "渡劫背景",
+      "priority": "P1",
+      "usage": "渡劫畫面的背景（閃電由程式加上）",
+      "subject": "雷雨將至的天空：厚重的暗紫色雷雲壓頂，雲層中央有一個漩渦狀的開口，下方是一座孤峰的峰頂平台；畫面中不要出現閃電。",
+      "must": [
+        "暗紫色雷雲",
+        "雲層中央的漩渦開口",
+        "孤峰頂的平台",
+        "沒有閃電"
+      ],
+      "gen_bg": null
+    },
+    {
+      "id": "card_fortune_back",
+      "category": "card",
+      "name": "機緣卡背面",
+      "priority": "P2",
+      "usage": "首功寶箱翻牌前的卡片背面",
+      "subject": "深黛青色的底，用金色細線勾勒對稱的雲紋圖案，中央是一個圓形羅盤圖樣，四角有角花裝飾。",
+      "must": [
+        "深色底與金色細線",
+        "上下左右對稱",
+        "中央圓形羅盤",
+        "沒有文字"
+      ],
+      "gen_bg": null
+    }
+  ]
+}

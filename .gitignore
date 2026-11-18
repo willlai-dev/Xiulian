@@ -1,0 +1,22 @@
+# Xcode / XcodeGen（.xcodeproj 由 CI 用 project.yml 產生，不提交）
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+DerivedData/
+build/
+
+# Swift Package
+.build/
+.swiftpm/
+
+# 編譯產物與紀錄
+*.ipa
+Payload/
+*.log
+
+# 系統與編輯器
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/*
+!.vscode/extensions.json

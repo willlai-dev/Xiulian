@@ -1,0 +1,136 @@
+# 用 GitHub 的雲端 Mac 編出未簽章的 Xiulian.ipa，再用 SideStore 或 Sideloadly 簽章安裝到 iPhone。
+# 流程：XiulianCore 單元測試 → XcodeGen 產生專案 → xcodebuild 編譯 → 打包 .ipa
+# 合併到 main 時，會更新名為 latest 的 Release，手機可以直接下載。
+
+name: Build IPA
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: macos-26
+    timeout-minutes: 40
+    env:
+      APP_NAME: Xiulian
+    steps:
+      - name: 取得程式碼
+        uses: actions/checkout@v4
+
+      - name: 檢查專案是否已建立
+        id: guard
+        run: |
+          if [ -f project.yml ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::還沒有 project.yml，略過編譯（Phase 0 完成後就會開始編譯）"
+          fi
+
+      - name: 選擇最新穩定版 Xcode
+        if: steps.guard.outputs.ready == 'true'
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: 顯示版本
+        if: steps.guard.outputs.ready == 'true'
+        run: |
+          xcodebuild -version
+          swift --version
+          sw_vers
+
+      - name: 規則單元測試（XiulianCore）
+        if: steps.guard.outputs.ready == 'true'
+        run: |
+          set -o pipefail
+          if [ -f XiulianCore/Package.swift ]; then
+            swift test --package-path XiulianCore 2>&1 | tee swifttest.log
+          else
+            echo "還沒有 XiulianCore，略過測試"
+          fi
+
+      - name: 安裝 XcodeGen
+        if: steps.guard.outputs.ready == 'true'
+        run: brew install xcodegen
+
+      - name: 產生 Xcode 專案
+        if: steps.guard.outputs.ready == 'true'
+        run: xcodegen generate
+
+      - name: 編譯（不簽章）
+        if: steps.guard.outputs.ready == 'true'
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project "$APP_NAME.xcodeproj" \
+            -scheme "$APP_NAME" \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            build 2>&1 | tee xcodebuild.log
+
+      - name: 整理錯誤（失敗時）
+        if: failure()
+        run: |
+          {
+            echo "## 錯誤摘要（可以直接複製給 Claude）"
+            echo '```'
+            found=0
+            for f in swifttest.log xcodebuild.log; do
+              if [ -f "$f" ]; then
+                found=1
+                echo "--- $f ---"
+                grep -E "(error:|✘|failed|FAILED)" "$f" | sort -u | head -60 || true
+              fi
+            done
+            if [ "$found" = 0 ]; then
+              echo "沒有測試或編譯紀錄：失敗發生在更早的步驟，請看那個步驟的輸出。"
+            fi
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: 打包 .ipa
+        if: steps.guard.outputs.ready == 'true'
+        run: |
+          APP_PATH="build/Build/Products/Release-iphoneos/$APP_NAME.app"
+          test -d "$APP_PATH" || { echo "找不到 $APP_PATH"; exit 1; }
+          echo "App 內的 extensions："
+          ls "$APP_PATH/PlugIns" 2>/dev/null || echo "（沒有 PlugIns，動態島不會出現）"
+          mkdir -p Payload
+          cp -R "$APP_PATH" Payload/
+          zip -qry "$APP_NAME.ipa" Payload
+
+      - name: 上傳 .ipa（Actions 頁面可下載）
+        if: steps.guard.outputs.ready == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.APP_NAME }}-ipa
+          path: ${{ env.APP_NAME }}.ipa
+          retention-days: 14
+
+      - name: 更新 latest Release（只在 main，方便手機直接下載）
+        if: steps.guard.outputs.ready == 'true' && github.event_name == 'push' && github.ref == 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete latest --yes --cleanup-tag || true
+          gh release create latest "$APP_NAME.ipa" \
+            --target "$GITHUB_SHA" \
+            --title "最新版本（$(TZ=Asia/Taipei date '+%Y-%m-%d %H:%M')）" \
+            --notes "commit $GITHUB_SHA" \
+            --prerelease
