@@ -1,0 +1,86 @@
+# 修練（Xiulian）的 Xcode 專案設定：XcodeGen 的唯一設定來源。
+# CI 執行 `xcodegen generate` 產生 Xiulian.xcodeproj 與兩個 Info.plist（都不提交）。
+# project、target、scheme 的名稱 CI 會用到，不要改。
+name: Xiulian
+
+options:
+  developmentLanguage: zh-Hant
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+
+packages:
+  XiulianCore:
+    path: XiulianCore
+
+targets:
+  Xiulian:
+    type: application
+    platform: iOS
+    sources:
+      - path: Xiulian
+      - path: Shared
+    dependencies:
+      - package: XiulianCore
+      - target: XiulianWidgets
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: tw.personal.xiulian
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    info:
+      path: Xiulian/Info.plist
+      properties:
+        CFBundleDisplayName: 修練
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        LSRequiresIPhoneOS: true
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        NSSupportsLiveActivities: true
+        UIFileSharingEnabled: true
+        LSSupportsOpeningDocumentsInPlace: true
+        UIBackgroundModes:
+          - fetch
+          - processing
+        BGTaskSchedulerPermittedIdentifiers:
+          - tw.personal.xiulian.refresh
+
+  XiulianWidgets:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: XiulianWidgets
+      - path: Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: tw.personal.xiulian.widgets
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+    info:
+      path: XiulianWidgets/Info.plist
+      properties:
+        CFBundleDisplayName: 修練
+        CFBundleShortVersionString: "$(MARKETING_VERSION)"
+        CFBundleVersion: "$(CURRENT_PROJECT_VERSION)"
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+
+schemes:
+  Xiulian:
+    build:
+      targets:
+        Xiulian: all
+    run:
+      config: Debug
+    archive:
+      config: Release
