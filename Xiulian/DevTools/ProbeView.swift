@@ -10,8 +10,12 @@ struct ProbeView: View {
         List {
             statusSection
             demoSection
+            dailyProgressSection
+            scheduleSection
+            timerSection
             notificationSection
             lifespanSection
+            activityListSection
             if let lastAction = model.lastAction {
                 Section("最近一次操作") {
                     Text(lastAction)
@@ -35,6 +39,7 @@ struct ProbeView: View {
             LabeledContent("版本", value: AppInfo.versionDescription)
             LabeledContent("今天（換日 \(AppClock.dayBoundary.dayStartHour):00）", value: AppClock.today().description)
             LabeledContent("下次換日", value: AppFormat.dateTime(AppClock.dayBoundary.nextRollover(after: AppClock.now())))
+            LabeledContent("即時動態", value: model.activitiesEnabled ? "已開啟" : "已關閉（設定 → 修練）")
             LabeledContent("通知權限", value: model.notificationStatus)
         }
     }
@@ -86,6 +91,62 @@ struct ProbeView: View {
         return "\(AppFormat.time(updatedAt))（\(model.state.lastUpdatedBy ?? "?")）"
     }
 
+    // MARK: 1–2. 動態島（每日進度）
+
+    private var dailyProgressSection: some View {
+        Section {
+            Button("1. 啟動動態島") {
+                Task { await model.startDailyProgress() }
+            }
+        } header: {
+            Text("1–2. 動態島（每日進度）")
+        } footer: {
+            Text("啟動後回到主畫面：動態島顯示百分比，鎖定畫面也看得到。長按動態島展開，按「完成」→ 百分比增加，並寫進存檔與除錯紀錄。")
+        }
+    }
+
+    // MARK: 3. 排程啟動
+
+    private var scheduleSection: some View {
+        Section {
+            Button("3. 2 分鐘後自動出現") {
+                Task { await model.scheduleDailyProgress() }
+            }
+            if let start = model.scheduledStart {
+                LabeledContent("預定出現", value: AppFormat.time(start))
+            }
+        } header: {
+            Text("3. 排程啟動")
+        } footer: {
+            Text("會先結束目前的每日進度。按下後鎖定螢幕，2 分鐘後動態島應該自動出現，並亮螢幕顯示師父傳音。")
+        }
+    }
+
+    // MARK: 4. 計時器樣式
+
+    private var timerSection: some View {
+        Section {
+            Button("4. 啟動計時器樣式") {
+                Task { await model.startTimer() }
+            }
+            if let timer = model.state.timer {
+                LabeledContent("經過時間") {
+                    ProbeTimerText(timer: timer)
+                }
+                Button(timer.isPaused ? "繼續" : "暫停") {
+                    Task { await model.toggleTimer() }
+                }
+                Button("結束計時器", role: .destructive) {
+                    Task { await model.stopTimer() }
+                }
+            }
+        } header: {
+            Text("4. 計時器樣式")
+        } footer: {
+            Text("計時器是第二種動態島，可以和每日進度同時存在。時間由系統自己跑；按暫停會停住。")
+        }
+    }
+
     // MARK: 5. 通知
 
     private var notificationSection: some View {
@@ -118,5 +179,49 @@ struct ProbeView: View {
         } footer: {
             Text("讀取 app 裡的簽章描述檔（embedded.mobileprovision）的到期時間；剛簽章時大約剩 7 天。")
         }
+    }
+
+    // MARK: 目前的動態島
+
+    private var activityListSection: some View {
+        Section {
+            if model.activityRows.isEmpty {
+                Text("目前沒有")
+                    .foregroundStyle(.secondary)
+            }
+            ForEach(model.activityRows) { row in
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(verbatim: "\(row.kind)・\(row.state)")
+                    Text(verbatim: "\(row.detail)｜\(row.id.prefix(8))")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+            }
+            Button("重新整理") {
+                Task { await model.refresh() }
+            }
+            Button("結束全部動態島", role: .destructive) {
+                Task { await model.endAllActivities() }
+            }
+        } header: {
+            Text("目前的動態島")
+        } footer: {
+            Text("包括排程中、還沒出現的。")
+        }
+    }
+}
+
+/// app 內的計時器顯示，和動態島用同一種算法。
+private struct ProbeTimerText: View {
+    let timer: ProbeTimer
+
+    var body: some View {
+        let content = LiveActivityService.timerContent(for: timer, now: AppClock.now())
+        Text(
+            timerInterval: content.timerStart...max(content.timerStart, content.limitEnd),
+            pauseTime: content.pausedAt,
+            countsDown: false
+        )
+        .monospacedDigit()
     }
 }

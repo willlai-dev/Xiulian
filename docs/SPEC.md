@@ -213,6 +213,7 @@ App 有兩種 activity：「每日進度」（本節）和「學習計時器」�
 - **21:00 自動出現**：用 ActivityKit 的排程啟動（iOS 26 起）。條件是當天還沒達標、也沒有暫停。
   - API：`Activity.request(attributes:content:pushType: nil, style:alertConfiguration:startDate:)`。
     Xcode 26 SDK 的參數叫 `startDate:`，iOS 27 SDK 另外多了 `start:`，以 CI 能編過的為準。
+    目前（2026-11）CI 的 runner 只有 Xcode 26.6，所以用 `startDate:`。
   - 要附上 `alertConfiguration`，到時間會亮螢幕並顯示師父傳音。
   - App 每次執行時，確保「今天的開始時間（還沒過的話）」和「明天的開始時間」都已排好，不重複建立。
   - 當天達標或暫停時，結束今天那個 pending 的 activity：對 pending 狀態的 activity 呼叫 end，就會取消排程。

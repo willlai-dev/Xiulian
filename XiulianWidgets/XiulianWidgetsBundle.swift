@@ -6,5 +6,6 @@ import WidgetKit
 struct XiulianWidgetsBundle: WidgetBundle {
     var body: some Widget {
         DailyProgressLiveActivity()
+        StudyTimerLiveActivity()
     }
 }
