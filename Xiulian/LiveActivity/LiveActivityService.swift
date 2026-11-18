@@ -50,7 +50,7 @@ enum LiveActivityService {
         guard checkEnabled() else { return false }
         await end(DailyProgressAttributes.self, reason: "排程前先結束")
         do {
-            // Xcode 26 SDK 的參數叫 startDate:；新版 SDK 改名為 start:，舊名標為棄用。以 CI 能編過的為準。
+            // 舊名 startDate: 已標為棄用（iOS 26.0）；CI 的 Xcode 26.6 已經有 start:。
             let activity = try Activity<DailyProgressAttributes>.request(
                 attributes: DailyProgressAttributes(day: AppClock.today().description),
                 content: ActivityContent(state: dailyContent(for: state, now: start), staleDate: nil),
@@ -61,7 +61,7 @@ enum LiveActivityService {
                     body: "亥時已至，今日日課尚未圓滿。（技術驗證：排程啟動）",
                     sound: .default
                 ),
-                startDate: start
+                start: start
             )
             Log.info(
                 .activity,

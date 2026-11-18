@@ -211,9 +211,8 @@ App 有兩種 activity：「每日進度」（本節）和「學習計時器」�
   - Live Activity 最多存活 8 小時。21:00 到換日的 04:00 是 7 小時，放得下；
     最早的動態島時段如果早於 20:00，activity 會在換日前被系統結束。
 - **21:00 自動出現**：用 ActivityKit 的排程啟動（iOS 26 起）。條件是當天還沒達標、也沒有暫停。
-  - API：`Activity.request(attributes:content:pushType: nil, style:alertConfiguration:startDate:)`。
-    Xcode 26 SDK 的參數叫 `startDate:`，iOS 27 SDK 另外多了 `start:`，以 CI 能編過的為準。
-    目前（2026-11）CI 的 runner 只有 Xcode 26.6，所以用 `startDate:`。
+  - API：`Activity.request(attributes:content:pushType: nil, style:alertConfiguration:start:)`。
+    舊名 `startDate:` 已標為棄用（iOS 26.0）。CI 的 Xcode 26.6 兩種都有，用 `start:`。
   - 要附上 `alertConfiguration`，到時間會亮螢幕並顯示師父傳音。
   - App 每次執行時，確保「今天的開始時間（還沒過的話）」和「明天的開始時間」都已排好，不重複建立。
   - 當天達標或暫停時，結束今天那個 pending 的 activity：對 pending 狀態的 activity 呼叫 end，就會取消排程。
